@@ -1,0 +1,28 @@
+<h2>Inventory</h2>
+<app-dashboard></app-dashboard>
+<div *ngIf="user && user.role=='admi'">
+    <ul class="products">
+        <li *ngFor="let product of products">
+          <a routerLink="/productDetail/{{product.id}}">
+            <span class="badge">{{product.id}}</span> {{product.name}}
+          </a>
+          <!--<button class= "view" title="view product" 
+          (click)="view(product)">view</button>-->
+          <button class="delete" title="delete product"
+          (click)="delete(product)">x</button>
+        </li>
+      </ul>      
+</div>
+
+<div *ngIf="user && user.role=='client'">
+    <ul class="products">
+        <li *ngFor="let product of products">
+          <a routerLink="/productDetail/{{product.id}}">
+            <span class="badge">{{product.id}}</span> {{product.name}}
+          </a>
+          <button class="buy" title="add Product"
+          (click)="addToOrder(product)">Add</button>
+       </li>
+    </ul>
+     
+</div>

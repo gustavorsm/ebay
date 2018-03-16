@@ -1,0 +1,25 @@
+<h2>My Orders</h2>
+<app-dashboard></app-dashboard>
+<div *ngIf="user && user.role == 'admi' ">
+  
+  <ul class="pedidos">
+    <li *ngFor="let pedido of pedidos">
+   
+        <span class="badge">{{pedido.user.name}}</span> 
+
+    </li>
+  </ul>
+</div>
+
+<div *ngIf=" car && user && user.role == 'client' ">
+
+  <ul class="car">
+   
+    <li *ngFor="let product of car.listP">
+   
+        <span class="badge">{{product.name}}</span> 
+    </li>
+  </ul>
+  <button class="buy" title="add Car"
+          (click)="save(car)">save</button>
+</div>

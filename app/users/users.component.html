@@ -1,0 +1,11 @@
+<h2>Users</h2>
+<app-dashboard></app-dashboard>
+<ul class="users">
+  <li *ngFor="let user of users">
+    <a routerLink="/userDetail/{{user.name}}">
+    <span class="badge">{{user.id}}</span> {{user.name}}
+    </a>
+    <button class="delete" title="delete product"
+    (click)="delete(product)">x</button>
+  </li>
+</ul>

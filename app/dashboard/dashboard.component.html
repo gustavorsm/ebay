@@ -1,0 +1,20 @@
+<h3>Market</h3>
+
+<div *ngIf="user && user.role == 'admi' ">
+    <nav>
+        <a routerLink = "/product">Products</a>
+        <a routerLink = "/user">Users</a>
+        <a routerLink = "/orders">Orders</a>
+    </nav>
+</div>
+<div *ngIf="user && user.role == 'client' ">
+        <nav>
+                <a routerLink = "/product">Products</a>
+                <a routerLink = "/car">Car</a>
+                <a routerLink = "/orders">Orders</a>
+        </nav>
+</div>
+<button (click)="exit()">Exit</button>
+
+
+
